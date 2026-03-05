@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme inline {
+
+  --color-titles: #282828;
+  --color-brand-blue: #003087;
+  --color-blue-accent: #0F6EEF;
+
+  --font-sans: var(--font-inter);
+  --font-manrope: var(--font-manrope);
+  --font-inter: var(--font-inter);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+h1,
+h2,
+p {
+  color: var(--color-titles);
+}
