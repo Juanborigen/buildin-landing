@@ -5,11 +5,11 @@ export default function MarketplaceSection() {
         <section id="inversores" className="bg-gray-50 py-20 overflow-hidden flex items-center relative min-h-[550px]">
             <Image src={"/assets/images/mktplacebg.webp"} alt="Marketplace" fill className="object-cover" />
             <div className="max-w-7xl mx-auto px-6 relative z-20">
-                <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className="flex flex-col lg:flex-row items-center">
                     {/* Left: image placeholder - man with phone */}
-                    <div className="w-full lg:w-1/2 flex justify-center"/>
+                    <div className="w-full lg:w-2/5 flex justify-center"/>
                     {/* Right: text content */}
-                    <div className="w-full lg:w-1/2 flex flex-col gap-6">
+                    <div className="w-full lg:w-3/5 flex flex-col gap-6">
                         <h2 className="text-3xl lg:text-4xl leading-9 font-medium">
                             El marketplace abierto para<br/> <span className="font-semibold">invertir en obra real.</span>
                         </h2>

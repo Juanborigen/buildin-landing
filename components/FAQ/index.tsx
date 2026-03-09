@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface FAQItem {
   id: number;
@@ -45,15 +47,15 @@ function FAQItem({ item }: { item: FAQItem }) {
   const [isOpen, setIsOpen] = useState(item.id === 1);
 
   return (
-    <div className="border-b border-gray-200 py-6">
+    <div className="shadow-sm rounded-sm p-6 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        
         className="flex w-full items-start gap-4 text-left group"
         aria-expanded={isOpen}
       >
         {/* Icon */}
         <span
-          className={`mt-0.5 flex-shrink-0 w-5 h-5 flex items-center justify-center transition-colors duration-200 ${
+          className={`mt-0.5 shrink-0 w-5 h-5 flex items-center justify-center transition-colors duration-300 ${
             isOpen ? "text-blue-600" : "text-blue-600"
           }`}
         >
@@ -119,18 +121,19 @@ export default function PreguntasFrecuentes() {
   const rightColumn = faqData.filter((_, i) => i % 2 !== 0);
 
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white pb-16">
       {/* Header arch */}
       <div className="flex justify-center">
-        <div className="relative w-[520px] h-[180px] bg-[#1a2b6b] rounded-b-full flex items-center justify-center">
-          <h2 className="text-white text-3xl font-semibold tracking-wide">
+        <div className="relative h-60 w-[813px] flex justify-center items-center">
+        <Image src="/assets/images/svg/faq.svg" alt="FAQ" fill className="object-cover" />
+          <h4 className="text-white text-center lg:text-left leading-10 text-[40px] font-semibold relative z-20 font-manrope">
             Preguntas Frecuentes
-          </h2>
+          </h4>
         </div>
       </div>
 
       {/* FAQ Grid */}
-      <div className="max-w-6xl mx-auto px-8 pt-10 pb-20 grid grid-cols-1 md:grid-cols-2 gap-x-16">
+      <div className="max-w-6xl mx-auto px-8 pt-10 pb-20 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6">
         {/* Left Column */}
         <div>
           {leftColumn.map((item) => (
@@ -144,6 +147,9 @@ export default function PreguntasFrecuentes() {
             <FAQItem key={item.id} item={item} />
           ))}
         </div>
+      </div>
+      <div className="flex justify-end max-w-6xl px-8 mx-auto">
+          <Link href={"/"} className="font-bold font-manrope text-2xl text-brand-blue hover:underline">Volver al Inicio</Link>
       </div>
     </section>
   );

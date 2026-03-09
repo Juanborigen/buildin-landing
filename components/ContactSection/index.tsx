@@ -24,75 +24,76 @@ export default function ContactSection() {
 
     return (
         <section id="contacto" className="bg-white py-20 relative">
-            {/* Decorative circle */}
-            <Image src={"/assets/images/svg/rueda.svg"} alt="Mockup celular" width={750} height={600} className="object- absolute -left-[8%] -top-[25%] z-20" />
-            <div className="absolute left-0 bottom-0 w-72 h-72 lg:w-96 lg:h-96 -translate-x-1/3 translate-y-1/3">
-                <div className="w-full h-full rounded-full border-40 border-white/10" />
-            </div>
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
-                    {/* Left: ¿Hablamos? text */}
-                    <div className="w-full lg:w-2/5 flex flex-col gap-4 pt-4">
-                        <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                            ¿Hablamos?
-                        </h2>
-                        <p className="text-blue-200 text-base leading-relaxed max-w-xs">
-                            ¿Tenés dudas sobre cómo invertir? ¿Necesitás ayuda para publicar un proyecto?
-                        </p>
-                        <p className="text-blue-300 text-base font-medium">
-                            Nuestro equipo puede acompañarte.
-                        </p>
-                    </div>
+            <div className="relative max-w-[1350px] mx-auto">
+                <Image src={"/assets/images/svg/rueda.svg"} alt="Mockup celular" width={750} height={600} className=" absolute md:-left-[12%] -left-[45%] -top-[65%] z-20" />
+                <div className="absolute left-0 bottom-0 w-72 h-72 lg:w-96 lg:h-96 -translate-x-1/3 translate-y-1/3">
+                    <div className="w-full h-full rounded-full border-40 border-white/10" />
+                </div>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
+                        {/* Left: ¿Hablamos? text */}
+                        <div className="w-full lg:w-2/5 flex flex-col gap-4 lg:pt-4 pt-16">
+                            <h2 className="text-4xl text-right lg:text-left lg:text-5xl font-bold text-white leading-tight">
+                                ¿Hablamos?
+                            </h2>
+                            <p className="text-blue-200 text-base leading-relaxed max-w-xs">
+                                ¿Tenés dudas sobre cómo invertir? ¿Necesitás ayuda para publicar un proyecto?
+                            </p>
+                            <p className="text-blue-300 text-base font-medium">
+                                Nuestro equipo puede acompañarte.
+                            </p>
+                        </div>
 
-                    {/* Right: form */}
-                    <div className="w-full lg:w-2/4">
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                            <div className="flex flex-col sm:flex-row gap-4">
+                        {/* Right: form */}
+                        <div className="w-full lg:w-2/4">
+                            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <input
+                                        type="text"
+                                        name="nombre"
+                                        placeholder="Nombre"
+                                        value={form.nombre}
+                                        onChange={handleChange}
+                                        className="flex-1 bg-white/10 text-brand-blue placeholder-brand-blue border border-brand-blue rounded-2xl px-4 py-4 text-sm outline-none focus:border-gray-500/50 transition-colors"
+                                    />
+                                    <input
+                                        type="tel"
+                                        name="telefono"
+                                        placeholder="Teléfono"
+                                        value={form.telefono}
+                                        onChange={handleChange}
+                                        className="flex-1 bg-white/10 text-brand-blue placeholder-brand-blue border border-brand-blue rounded-2xl px-4 py-4 text-sm outline-none focus:border-gray-500/50 transition-colors"
+                                    />
+                                </div>
+
                                 <input
                                     type="text"
-                                    name="nombre"
-                                    placeholder="Nombre"
-                                    value={form.nombre}
+                                    name="empresa"
+                                    placeholder="Nombre de la empresa *Opcional"
+                                    value={form.empresa}
                                     onChange={handleChange}
-                                    className="flex-1 bg-white/10 text-brand-blue placeholder-brand-blue border border-brand-blue rounded-2xl px-4 py-4 text-sm outline-none focus:border-gray-500/50 transition-colors"
+                                    className="w-full bg-white/10 text-brand-blue placeholder-brand-blue border border-brand-blue rounded-2xl px-4 py-4 text-sm outline-none focus:border-gray-500/50 transition-colors"
                                 />
-                                <input
-                                    type="tel"
-                                    name="telefono"
-                                    placeholder="Teléfono"
-                                    value={form.telefono}
+
+                                <textarea
+                                    name="mensaje"
+                                    placeholder="Mensaje"
+                                    rows={5}
+                                    value={form.mensaje}
                                     onChange={handleChange}
-                                    className="flex-1 bg-white/10 text-brand-blue placeholder-brand-blue border border-brand-blue rounded-2xl px-4 py-4 text-sm outline-none focus:border-gray-500/50 transition-colors"
+                                    className="w-full bg-white/10 text-brand-blue placeholder-brand-blue border border-brand-blue rounded-2xl px-4 py-4 text-sm outline-none focus:border-gray-500/50 transition-colors resize-none"
                                 />
-                            </div>
 
-                            <input
-                                type="text"
-                                name="empresa"
-                                placeholder="Nombre de la empresa *Opcional"
-                                value={form.empresa}
-                                onChange={handleChange}
-                                className="w-full bg-white/10 text-brand-blue placeholder-brand-blue border border-brand-blue rounded-2xl px-4 py-4 text-sm outline-none focus:border-gray-500/50 transition-colors"
-                            />
-
-                            <textarea
-                                name="mensaje"
-                                placeholder="Mensaje"
-                                rows={5}
-                                value={form.mensaje}
-                                onChange={handleChange}
-                                className="w-full bg-white/10 text-brand-blue placeholder-brand-blue border border-brand-blue rounded-2xl px-4 py-4 text-sm outline-none focus:border-gray-500/50 transition-colors resize-none"
-                            />
-
-                            <div className="flex justify-end">
-                                <button
-                                    type="submit"
-                                    className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold px-8 py-3 rounded-full transition-colors duration-200 shadow-lg"
-                                >
-                                    Enviar
-                                </button>
-                            </div>
-                        </form>
+                                <div className="flex justify-end">
+                                    <button
+                                        type="submit"
+                                        className="bg-blue-500 hover:bg-blue-400 text-white text-sm font-semibold px-8 py-3 rounded-full transition-colors duration-200 shadow-lg"
+                                    >
+                                        Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -12,12 +12,12 @@ const navLinks = [
   { label: "FAQs", href: "/preguntas-frecuentes" },
 ];
 
-export default function Header() {
+export default function Header({isFixed}: {isFixed: boolean}) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed flex justify-center top-0 left-0 right-0 z-50">
-      <div className="min-w-7xl bg-[#507cbe21] backdrop-blur-2xl px-16 py-4 flex items-center justify-between rounded-b-[40px]">
+    <header className={`flex justify-center ${isFixed ? "fixed" : ""} top-0 left-0 right-0 z-50`}>
+      <div className="lg:min-w-7xl min-w-11/12 bg-[#507cbe21] backdrop-blur-2xl lg:px-16 px-8 py-4 flex items-center justify-between rounded-b-[40px]">
         {/* Logo */}
         <Link href={"/"}>
           <Image src={"/assets/images/logo-white.svg"} alt="Logo Buildin" width={160} height={100} />
@@ -53,13 +53,16 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+        <div className={`${menuOpen ? "" : "translate-x-full"} md:hidden absolute w-screen h-screen duration-500 left-0 top-0 bg-white border-t border-gray-100 px-6 py-4 flex flex-col justify-center gap-8`}>
+          <button 
+          className="font-black absolute right-10 top-10 text-4xl"
+          onClick={() => setMenuOpen(false)}
+          >&#10005;</button>
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-gray-600 text-sm hover:text-blue-900 transition-colors"
+              className="text-gray-600 text-2xl text-center hover:text-blue-900 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
@@ -72,7 +75,6 @@ export default function Header() {
             Ingresar
           </a>
         </div>
-      )}
     </header>
   );
 }
