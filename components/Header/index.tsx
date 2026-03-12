@@ -53,16 +53,19 @@ export default function Header({isFixed}: {isFixed: boolean}) {
       </div>
 
       {/* Mobile menu */}
-        <div className={`${menuOpen ? "" : "translate-x-full"} md:hidden absolute w-screen h-screen duration-500 left-0 top-0 bg-white border-t border-gray-100 px-6 py-4 flex flex-col justify-center gap-8`}>
+        <div className={`${menuOpen ? "" : "translate-x-full"} md:hidden absolute w-screen h-screen duration-500 left-0 top-0 bg-white border-t border-gray-100 px-6 py-4 flex flex-col justify-center items-center gap-10`}>
           <button 
           className="font-black absolute right-10 top-10 text-4xl"
           onClick={() => setMenuOpen(false)}
-          >&#10005;</button>
+          >
+            &#10005;
+          </button>
+          <Image src={"/assets/images/logo_blue.png"} alt="Logo Buildin" width={240} height={100} />
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-gray-600 text-2xl text-center hover:text-blue-900 transition-colors"
+              className="text-gray-600 text-xl text-center hover:text-blue-900 transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
@@ -70,7 +73,7 @@ export default function Header({isFixed}: {isFixed: boolean}) {
           ))}
           <a
             href="#ingresar"
-            className="bg-blue-900 text-white text-sm font-medium px-5 py-2 rounded-full text-center hover:bg-blue-800 transition-colors"
+            className="bg-blue-900 text-white text-xl font-medium px-8 py-2 rounded-full text-center hover:bg-blue-800 transition-colors"
           >
             Ingresar
           </a>

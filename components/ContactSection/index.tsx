@@ -25,15 +25,15 @@ export default function ContactSection() {
     return (
         <section id="contacto" className="bg-white py-20 relative">
             <div className="relative max-w-[1350px] mx-auto">
-                <Image src={"/assets/images/svg/rueda.svg"} alt="Mockup celular" width={750} height={600} className=" absolute md:-left-[12%] -left-[45%] -top-[65%] z-20" />
+                <Image src={"/assets/images/svg/rueda.svg"} alt="Mockup celular" width={850} height={600} className=" absolute md:-left-[14%] -left-[35%] -top-[40%] w-3/4 lg:w-3/5 lg:-top-[85%] z-20" />
                 <div className="absolute left-0 bottom-0 w-72 h-72 lg:w-96 lg:h-96 -translate-x-1/3 translate-y-1/3">
                     <div className="w-full h-full rounded-full border-40 border-white/10" />
                 </div>
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
-                        {/* Left: ¿Hablamos? text */}
-                        <div className="w-full lg:w-2/5 flex flex-col gap-4 lg:pt-4 pt-16">
-                            <h2 className="text-4xl text-right lg:text-left lg:text-5xl font-bold text-white leading-tight">
+                    <div className="flex flex-col lg:flex-row items-start justify-between gap-4 lg:gap-16">
+                        <div className="w-full lg:w-2/5 flex flex-col gap-4 lg:pt-4 pt-16 relative">
+                            {/* <Image src={"/assets/images/svg/rueda.svg"} alt="Mockup celular" fill className="object-cover" /> */}
+                            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
                                 ¿Hablamos?
                             </h2>
                             <p className="text-blue-200 text-base leading-relaxed max-w-xs">
@@ -43,8 +43,6 @@ export default function ContactSection() {
                                 Nuestro equipo puede acompañarte.
                             </p>
                         </div>
-
-                        {/* Right: form */}
                         <div className="w-full lg:w-2/4">
                             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                                 <div className="flex flex-col sm:flex-row gap-4">

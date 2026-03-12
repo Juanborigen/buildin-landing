@@ -3,7 +3,8 @@ import Image from "next/image";
 export default function DeveloperSection() {
     return (
         <section id="desarrollistas" className="bg-gray-50 py-20 overflow-hidden relative min-h-[550px]">
-            <Image src={"/assets/images/developerbg.jpg"} alt="" fill className="object-cover" />
+            <Image src={"/assets/images/dev-bg.png"} alt="Workers Background" fill className="object-cover" />
+            <div className="lg:hidden absolute top-0 left-0 w-full h-full bg-white/45" />
             <div className="max-w-7xl mx-auto px-6 relative z-20">
                 <div className="flex flex-col lg:flex-row justify-end items-center gap-12">
                     <div className="w-full lg:w-1/2 flex flex-col gap-6">
